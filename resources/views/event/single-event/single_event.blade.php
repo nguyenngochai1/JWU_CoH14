@@ -26,9 +26,6 @@
                         <div class="event-date">{!! $sukien->start_time !!} - {!! $sukien->end_time !!}</div>
                     </div>
 
-                    <div class="buy-tickets flex justify-content-center align-items-center">
-                        <a class="btn gradient-bg" href="#">Mua vé</a>
-                    </div>
                 </header>
 
                 <figure class="events-thumbnail">
@@ -63,7 +60,8 @@
 
                                 <div class="single-event-details-row">
                                     <label>Gía vé:</label>
-                                    <p>$89 <span>Sold Out</span></p>
+                                    <p>{!! $sukien->price_gold !!} <span>Vé vip</span></p>
+                                    <p>{!! $sukien->price_basic !!} <span>Vé thương</span></p>
                                 </div>
 
                                 <div class="single-event-details-row">
@@ -102,27 +100,25 @@
                     <div class="ticket-type flex justify-content-between align-items-center">
                         <h3 class="entry-title"><span>Vé Bạc</span>Vé thường</h3>
 
-                        <div class="ticket-price">$89</div>
+                        <div class="ticket-price">{!! $sukien->price_basic !!} </div>
                     </div>
-
                     <div class="flex align-items-center">
                         <div class="number-of-ticket flex justify-content-between align-items-center">
                             <span class="decrease-ticket">-</span>
-                            <input type="number" class="ticket-count" value="1" />
+                            <input type="number" name="quantity" class="ticket-count" value="1" />
                             <span class="increase-ticket">+</span>
                         </div>
 
                         <div class="clear-ticket-count">Xóa</div>
                     </div>
-
-                    <input type="submit" class="btn gradient-bg" value="Mua Vé">
+                        <a href="{!! url('addgiohang',[$sukien->Event_id,$sukien->name]) !!}" class="btn gradient-bg">Mua Vé</a>
+                    
                 </div>
-
                 <div class="ticket-row flex flex-wrap justify-content-between align-items-center">
                     <div class="ticket-type flex justify-content-between align-items-center">
                         <h3 class="entry-title"><span>Vé Vàng</span>Vé vip</h3>
 
-                        <div class="ticket-price">$199</div>
+                        <div class="ticket-price">{!! $sukien->price_gold !!} </div>
                     </div>
 
                     <div class="flex align-items-center">
@@ -134,8 +130,9 @@
 
                         <div class="clear-ticket-count">Xóa</div>
                     </div>
-
-                    <input type="submit" class="btn gradient-bg" value="Mua Vé">
+                     <a href="{!! url('addgiohang',[$sukien->Event_id,$sukien->name]) !!}" class="btn gradient-bg">Mua Vé</a>
+<!-- 
+                    <input type="submit" class="btn gradient-bg" value="Mua Vé"> -->
                 </div>
             </div>
         </div>

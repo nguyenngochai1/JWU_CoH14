@@ -56,7 +56,7 @@
                     </div>
 
                     <div class="event-cost flex justify-content-center align-items-center">
-                        from<span>$89</span>
+                        from<span>{{$sk->price_basic}}</span>
                     </div>
                 </header>
 

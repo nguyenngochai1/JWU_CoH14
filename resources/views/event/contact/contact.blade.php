@@ -80,11 +80,16 @@
     <div class="row">
         <div class="col-12">
             <div class="contact-form">
-                <form class="row">
-                    <div class="col-12 col-md-4"><input type="text" placeholder="Name"></div>
-                    <div class="col-12 col-md-4"><input type="email" placeholder="E-mail"></div>
-                    <div class="col-12 col-md-4"><input type="text" placeholder="Subject"></div>
-                    <div class="col-12"><textarea placeholder="Message" rows="8"></textarea></div>
+                <form class="row" method="post" action="{{route('sendcontact')}}">
+                    <input type="hidden" name="_token" value="{{csrf_token()}}" />
+                    <div class="col-12 col-md-4"><input type="text" name="name" required="" oninvalid="this.setCustomValidity('Trường này không được để trống')" 
+                    oninput="setCustomValidity('')" placeholder="Họ và tên"></div>
+                    <div class="col-12 col-md-4"><input type="email" name="email" required=""  oninvalid="this.setCustomValidity('Trường này không được để trống')" 
+                    oninput="setCustomValidity('')" placeholder="E-mail"></div>
+                    <div class="col-12 col-md-4"><input type="text" name="subject" required=""  oninvalid="this.setCustomValidity('Trường này không được để trống')"
+                    oninput="setCustomValidity('')" placeholder="Tiêu đề"></div>
+                    <div class="col-12"><textarea placeholder="Yêu cầu" name="request" required="" oninvalid="this.setCustomValidity('Trường này không được để trống')" 
+                    oninput="setCustomValidity('')"  rows="8"></textarea></div>
                     <div class="col-12 flex justify-content-center"><input class="btn gradient-bg" type="submit" value="Gửi câu hỏi"></div>
                 </form>
             </div>

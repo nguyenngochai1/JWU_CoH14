@@ -7,7 +7,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/capstone1/public/event/css/bootstrap.min.css">
 
@@ -19,6 +19,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="/capstone1/public/event/style.css">
+     <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
 
 </head>
 <body>
@@ -53,10 +54,19 @@
                     </nav><!-- .site-navigation -->
                 </div><!-- .col -->
 
-                <div class="col-lg-3 d-none d-lg-block order-2 order-lg-3">
+    
+                 <div class="col-lg-3 d-none d-lg-block order-2 order-lg-3">
                     <div class="buy-tickets">
-                        <a class="btn gradient-bg" href="{{route('event.login.login')}}">Đăng Nhập</a>
+                        <a class="btn gradient-bg" href="#">Đăng nhập</a>
                     </div><!-- .buy-tickets -->
+                    <div class="beta-comp" class="buy-tickets">
+                        <div class="cart">
+                            
+                            <div class="beta-select" style="color: white;"><a href="{{route('viewgiohang')}}" style="color:white;" class="fa fa-shopping-cart"> Giỏ hàng () </a><i class="fa fa-chevron-down"></i>
+                               
+                            </div>
+                        </div>
+                    </div>
                 </div><!-- .col -->
             </div><!-- .row -->
         </div><!-- .container-fluid -->

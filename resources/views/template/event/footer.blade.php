@@ -9,52 +9,54 @@
                 </header>
 
                 <div class="newsletter-form">
-                  @if(count($errors) > 0)
+              <!--     @if(count($errors) > 0)
                         <div class="alert alert-danger">
                             @foreach($errors->all() as $err)
                                 {{$err}}<br>
                             @endforeach
                         </div>
                     @endif
-                    @if(session('thongbao'))
+                    @if (session('alert'))
                         <div class="alert alert-success">
-                            {{session('thongbao')}}
+                            {{ session('alert') }}
                         </div>
-                    @endif  
+                @endif -->
+                <!-- Include this after the sweet alert js file -->
+
+            
+         
                  <script type="text/javascript">
                         function InvalidMsg(email) {
                                 if (email.value == '') {
-                                    email.setCustomValidity('Required email address');
+                                    email.setCustomValidity('Bạn phải nhập trường này');
                                 }
                                 else if(email.validity.typeMismatch){
-                                         email.setCustomValidity('please enter a valid email address');
+                                         email.setCustomValidity('địa chỉ email không hợp lệ');
                                       }
                                      else {
-                                         email.setCustomValidity('');
-                                      }
-                                     return true;
+                                        email.setCustomValidity('');
+                                        }
+                                        return true;
                                 }
                         
                          function InvalidName(name) {
                                 if (name.value == '') {
-                                    name.setCustomValidity('Required name ');
+                                    name.setCustomValidity('Bạn phải nhập trường này');
                                 }
-                                else if(name.validity < 3){
-                                         name.setCustomValidity('name không bé hơn 3 kí tự');
+                                else if(name.value.length <= 3){
+                                         name.setCustomValidity('Tên không bé hơn 3 kí tự');
                                       }
                                      else {
                                          name.setCustomValidity('');
                                       }
                                      return true;
                                 }
-                          
-                            }
                     </script>  
                     <form class="flex flex-wrap justify-content-center align-items-center" method="post" action="{{route('dangkisukien')}}"  >
                         <input type="hidden" name="_token" value="{{csrf_token()}}" />
 
                         <div class="col-md-12 col-lg-3" >
-                            <input type="text" name="name" minlength="3"  oninvalid="InvalidName(this);" oninput="InvalidName(this);" required="required"  placeholder="Họ và Tên">
+                            <input type="text" name="name"   oninvalid="InvalidName(this);" oninput="InvalidName(this);" required="required"  placeholder="Họ và Tên">
                         </div>
 
                         <div class="col-md-12 col-lg-6">
@@ -62,8 +64,10 @@
                         </div>
 
                         <div class="col-md-12 col-lg-3">
-                            <input class="btn gradient-bg" type="submit"  value="ĐĂNG KÍ">
+                            <input class="btn gradient-bg" onClick="showMessage(this)" type="submit"  value="ĐĂNG KÍ">
                         </div>
+                            @include('sweet::alert')
+
                     </form>
                    
                 </div>
@@ -120,7 +124,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script type='text/javascript' src='/capstone1/public/event/js/jquery.countTo.min.js'></script>
 <script type='text/javascript' src='/capstone1/public/event/js/custom.js'></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
 
 </body>
 </html>

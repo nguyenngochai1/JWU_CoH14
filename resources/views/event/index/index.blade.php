@@ -32,7 +32,7 @@
                                         </div><!-- .countdown-holder -->
                                     </div><!-- .countdown -->
 
-                                    <h2 class="entry-title">1 Chúng tôi có những sự kiện tốt nhất. <br>Đặt vé ngay bây giờ!</h2>
+                                    <h2 class="entry-title">{{$sl->name}}!</h2>
                                 </div><!--- .entry-header -->
 
                                 <div class="entry-footer">
@@ -83,7 +83,7 @@
                 </div>
 
                 <footer class="entry-footer">
-                    <a href="#" class="btn gradient-bg">Xem Thêm</a>
+                    <a href="{{route('event.aboutus.aboutus')}}" class="btn gradient-bg">Xem Thêm</a>
                     <a href="#" class="btn dark">Đăng Kí Ngay</a>
                 </footer>
             </div>
